@@ -1,0 +1,208 @@
+:root {
+  --fondo: #070707;
+  --panel: #111216;
+  --texto: #ffffff;
+  --gris: #9A9A9A;
+  --acento: #CE4F20;
+  --dorado: #D4AF37;
+}
+
+/* ======= RESETEO ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ======= CABECERA ======= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background-color: #070707;
+  color: #fff;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#logo {
+  height: 160px;
+  width: 160px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 70px;
+  color: var(--dorado);
+  letter-spacing: 2px;
+}
+
+/* ======= GALERÍA DE PELÍCULAS ======= */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  justify-items: center;
+  background-color: #0b0b0b;
+  padding: 40px 20px;
+}
+
+.tarjeta {
+  background: var(--panel);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.8);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+/* ======= POP-UP ======= */
+.ventana-escena {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.contenido-ventana {
+  width: 800px;
+  height: 720px;
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+.cerrar-ventana {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 24px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cerrar-ventana:hover {
+  color: var(--acento);
+}
+
+#videoEscena {
+  width: 840px;
+  display: flex;
+  position: relative;
+  top: 15%;
+  object-fit: cover;
+}
+
+.contenido-ventana video.paused {
+  filter: brightness(0.7);
+}
+
+
+/* ======= FOOTER ======= */
+.galeria-footer {
+  background: #0b0b0b;
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contenedor-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.botones-footer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.botones-footer button {
+  background: transparent;
+  border: 1px solid var(--acento);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.botones-footer button:hover {
+  background: var(--acento);
+}
+
+.boton-activo {
+  background: var(--acento);
+}
+
+/* ======= BLOQUES ======= */
+.bloque {
+  display: none;
+}
+
+.bloque.mostrar {
+  display: block;
+}
+
+/* ======= CONTENIDO PRINCIPAL ======= */
+.bloque-unico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloque-unico img {
+  height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.6);
+  margin-bottom: 24px;
+}
+
+/* ======= CRÍTICAS ======= */
+.texto-critica {
+  max-width: 700px;
+  color: #ddd;
+}
+
+.texto-critica h3 {
+  color: var(--dorado);
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.texto-critica p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  color: #ccc;
+}

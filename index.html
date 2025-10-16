@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TDEUT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ======= CABECERA ======= -->
+  <header>
+    <div class="encabezado">
+      <img src="img/logo.png" alt="logo de TDEUT" id="logo">
+      <h1>TDEUT</h1>
+      <p class="subtitulo">Escenas, críticas y bandas sonoras del cine contemporáneo</p>
+    </div>
+  </header>
+
+  <!-- ======= GALERÍA DE PELÍCULAS ======= -->
+  <div class="galeria" id="galeriaPeliculas"></div>
+
+  <!-- ======= POP-UP DE ESCENAS ======= -->
+  <div class="ventana-escena" id="ventanaEscena">
+    <div class="contenido-ventana">
+      <button class="cerrar-ventana" id="cerrarVentana">&times;</button>
+      <video id="videoEscena" autoplay playsinline loop></video>
+    </div>
+  </div>
+
+  <!-- ======= FOOTER ======= -->
+  <section class="galeria-footer">
+    <div class="contenedor-footer">
+      <div class="botones-footer">
+        <button id="btnVinilos" class="boton-activo">🎵 Bandas sonoras</button>
+        <button id="btnCriticas">🎬 Críticas</button>
+      </div>
+
+      <!-- Contenedores vacíos, se llenan dinámicamente -->
+      <div class="bloque mostrar" id="bloqueVinilos"></div>
+      <div class="bloque" id="bloqueCriticas"></div>
+    </div>
+  </section>
+
+  <audio id="sonidoCambio">
+    <source src="recursos/audio/cambio-cine.mp3" type="audio/mp3">
+  </audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
